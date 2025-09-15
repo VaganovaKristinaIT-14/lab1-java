@@ -14,9 +14,11 @@ public class Methodes {
   }
 
   public int inputValid(int a, int min, int max) {
-    int digit;
-    for (digit = a; digit < min || digit > max; digit = this.scanner.nextInt()) {
-      System.out.println("Число вне диапазона. Повторите ввод ");
+    int digit = a;
+
+    while (digit < min || digit > max) {
+      System.out.println("Число вне диапазона (" + min + "-" + max + "). Повторите ввод: ");
+      digit = this.scanner.nextInt();
     }
 
     return digit;
